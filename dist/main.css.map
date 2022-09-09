@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.scss","main.css"],"names":[],"mappings":"AAAA,GACI,YAAA,CACA,SAAA,CACA,yBAAA,CACA,kBCCJ","file":"main.css","sourcesContent":["h1 {\r\n    display: grid;\r\n    color: red;\r\n    transform: translate(-50%);\r\n    transition: all .5s;\r\n\r\n}","h1 {\n  display: grid;\n  color: red;\n  transform: translate(-50%);\n  transition: all 0.5s;\n}"]}
