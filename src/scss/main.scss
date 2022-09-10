@@ -1,7 +1,5 @@
-h1 {
-    display: grid;
-    color: red;
-    transform: translate(-50%);
-    transition: all .5s;
-
-}
+@import 'reset';
+@import 'variables';
+@import 'container';
+@import 'picture';
+@import 'content';

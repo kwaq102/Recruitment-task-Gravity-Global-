@@ -1,0 +1,28 @@
+.container {
+    width: $max-width;
+    margin: 100px auto;
+    font-family: $font-family;
+
+    .view {
+        display: flex;
+        justify-content: space-around;
+        width: 70%;
+        margin: 0 auto;
+
+        @media screen and (max-width: map-get($breakpoints, xl)) {
+            width: 80%;
+        }
+
+        @media screen and (max-width: map-get($breakpoints, l)) {
+            width: 90%;
+        }
+
+        @media screen and (max-width: map-get($breakpoints, md)) {
+            flex-direction: column;
+        }
+    }
+
+    @media screen and (max-width: map-get($breakpoints, xl)) {
+        width: 100%;
+    }
+}

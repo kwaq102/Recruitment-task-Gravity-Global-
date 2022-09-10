@@ -1,0 +1,51 @@
+.content {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+        font-size: 42px;
+        font-weight: 700;
+        margin-bottom: 24px;
+
+        @media screen and (max-width: map-get($breakpoints, xs)) {
+            font-size: 36px;
+        }
+    }
+
+    p {
+        margin-bottom: 32px;
+        font-weight: 300;
+        line-height: 24px;
+
+        @media screen and (max-width: map-get($breakpoints, md)) {
+            text-align: justify;
+        }
+
+        @media screen and (max-width: map-get($breakpoints, xs)) {
+            font-size: $small-font-size;
+        }
+    }
+
+    button {
+        width: 128px;
+        height: 48px;
+        border: none;
+        border-radius: 32px;
+        background-color: #E4C1AE;
+        color: white;
+        font-weight: 700;
+
+    }
+
+    @media screen and (max-width: map-get($breakpoints, md)) {
+        align-self: center;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, xs)) {
+        width: 100%;
+    }
+}

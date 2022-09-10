@@ -1,0 +1,20 @@
+.picture {
+
+    img {
+        width: 505px;
+
+        @media screen and (max-width: map-get($breakpoints, sm)) {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: map-get($breakpoints, l)) {
+        margin-right: 10px;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, md)) {
+        align-self: center;
+        margin-bottom: 20px;
+        margin-right: 0px;
+    }
+}
