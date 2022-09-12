@@ -1,0 +1,1 @@
+const btn=document.querySelector(".btn"),showPopup=()=>{console.log("działą")};btn.addEventListener("click",showPopup);
