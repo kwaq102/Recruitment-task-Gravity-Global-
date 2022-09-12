@@ -1,7 +1,31 @@
+const body = document.querySelector('body')
 const btn = document.querySelector('.btn');
+const popup = document.querySelector('.popup');
+const close = document.querySelector('.close');
 
 const showPopup = () => {
-    console.log('działą')
+    popup.classList.add('show');
 }
 
-btn.addEventListener('click', showPopup)
+const hidePopup = () => {
+    popup.classList.remove('show');
+}
+
+btn.addEventListener('click', showPopup);
+
+popup.addEventListener('click', (e) => {
+    let isAlertWindow = false;
+
+    for (let i = 0; i < e.path.length; i++) {
+        if (e.path[i].className === "alert") {
+            isAlertWindow = true;
+            break;
+        }
+    }
+
+    if (!isAlertWindow) {
+        hidePopup();
+    }
+})
+
+close.addEventListener('click', hidePopup);
