@@ -2,11 +2,24 @@
     font-size: 42px;
     margin-bottom: 24px;
     line-height: 120%;
+    font-weight: 700;
+
+    @media screen and (max-width: map-get($breakpoints, xs)) {
+        font-size: 36px;
+    }
 }
 
 @mixin paragraph() {
     font-weight: 300;
     line-height: 150%;
+
+    @media screen and (max-width: map-get($breakpoints, md)) {
+        text-align: justify;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, xs)) {
+        font-size: $small-font-size;
+    }
 }
 
 @mixin btn {

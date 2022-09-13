@@ -6,24 +6,11 @@
 
     h2 {
         @include heading();
-        font-weight: 700;
-
-        @media screen and (max-width: map-get($breakpoints, xs)) {
-            font-size: 36px;
-        }
     }
 
     p {
         @include paragraph;
         margin-bottom: 32px;
-
-        @media screen and (max-width: map-get($breakpoints, md)) {
-            text-align: justify;
-        }
-
-        @media screen and (max-width: map-get($breakpoints, xs)) {
-            font-size: $small-font-size;
-        }
     }
 
     button {

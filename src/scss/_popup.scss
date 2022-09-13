@@ -14,7 +14,6 @@
         transform: translate(-50%, -50%);
         width: 910px;
         height: 210px;
-        display: flex;
         background-color: #fff;
 
         .close {
@@ -49,7 +48,7 @@
             }
 
             p {
-                @include paragraph;
+                @include paragraph();
 
                 strong {
                     font-weight: 700;
@@ -62,11 +61,30 @@
                 margin-left: 20px;
                 width: 100px;
                 height: 32px;
+
             }
 
             .show-btn {
                 display: inline-block;
+
+                @media screen and (max-width: map-get($breakpoints, sm)) {
+                    display: block;
+                    margin: 15px auto 0 auto;
+                }
             }
+
+            @media screen and (max-width: map-get($breakpoints, sm)) {
+                height: 100%;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        @media screen and (max-width: map-get($breakpoints, md)) {
+            width: 95%;
         }
     }
 }
