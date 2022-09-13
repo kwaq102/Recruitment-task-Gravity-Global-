@@ -7,22 +7,32 @@ const counterElement = document.querySelector('.counter');
 
 let counter = Number(localStorage.getItem('counter'));
 
-const showPopup = () => {
-    popup.classList.add('show');
+const showBtnReset = () => {
+    btnReset.classList.add('show-btn');
+}
+const setCounter = () => {
     counter++;
     localStorage.setItem('counter', counter.toString())
     counterElement.textContent = counter;
+
+    if (counter > 5) {
+        showBtnReset();
+    }
+}
+const resetCounter = () => {
+    localStorage.setItem('counter', '0');
+    counter = 0;
+    counterElement.textContent = '0';
+    btnReset.classList.remove('show-btn')
+}
+
+const showPopup = () => {
+    popup.classList.add('show');
+    setCounter();
 }
 
 const hidePopup = () => {
     popup.classList.remove('show');
-}
-
-const resetCounter = () => {
-    console.log('ok');
-    // localStorage.setItem('counter', '0');
-    localStorage.removeItem('counter');
-    counterElement.textContent = '0'
 }
 
 btn.addEventListener('click', showPopup);
@@ -40,7 +50,7 @@ popup.addEventListener('click', (e) => {
     if (!isAlertWindow) {
         hidePopup();
     }
-})
+});
 
 close.addEventListener('click', hidePopup);
 btnReset.addEventListener('click', resetCounter);
