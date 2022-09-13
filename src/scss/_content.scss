@@ -27,14 +27,7 @@
     }
 
     button {
-        width: 128px;
-        height: 48px;
-        border: none;
-        border-radius: 32px;
-        background-color: #E4C1AE;
-        color: white;
-        font-weight: 700;
-        cursor: pointer;
+        @include btn;
     }
 
     @media screen and (max-width: map-get($breakpoints, md)) {
