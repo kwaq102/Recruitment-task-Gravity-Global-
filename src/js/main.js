@@ -1,4 +1,3 @@
-const body = document.querySelector('body')
 const btn = document.querySelector('.btn');
 const btnReset = document.querySelector('.btn-reset')
 const popup = document.querySelector('.popup');
@@ -7,16 +6,13 @@ const counterElement = document.querySelector('.counter');
 
 let counter = Number(localStorage.getItem('counter'));
 
-const showBtnReset = () => {
-    btnReset.classList.add('show-btn');
-}
 const setCounter = () => {
     counter++;
     localStorage.setItem('counter', counter.toString())
     counterElement.textContent = counter;
 
     if (counter > 5) {
-        showBtnReset();
+        btnReset.classList.add('show-btn');
     }
 }
 const resetCounter = () => {
@@ -38,16 +34,7 @@ const hidePopup = () => {
 btn.addEventListener('click', showPopup);
 
 popup.addEventListener('click', (e) => {
-    let isAlertWindow = false;
-
-    for (let i = 0; i < e.path.length; i++) {
-        if (e.path[i].className === "alert") {
-            isAlertWindow = true;
-            break;
-        }
-    }
-
-    if (!isAlertWindow) {
+    if (e.target.className === "popup show") {
         hidePopup();
     }
 });
